@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import Admin from "./admin";
 import '../styles/logins.css'
+import axios from 'axios';
 class Adminlogin  extends Component {
 
     constructor(props){
@@ -16,8 +17,8 @@ class Adminlogin  extends Component {
         };
     }
     componentWillMount(){
-       // axios.get('http://localhost:5000/api/admin')  
-         //   .then(response => this.setState({dbuser: response.data[0].username, dbpass:response.data[0].password}))
+        axios.get('http://localhost:5000/api/admin')  
+            .then(response => this.setState({dbuser: response.data[0].username, dbpass:response.data[0].password}))
     }
     validateForm(){
         return this.state.username === this.state.dbuser && this.state.password === this.state.dbpass;

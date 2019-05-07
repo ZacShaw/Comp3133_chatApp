@@ -327,7 +327,7 @@ class Room extends React.Component{
       return rows.push(createData(item['room'],this.date, this.time, item['status']))
     })*/
     this.selectStatus=(e)=>{
-      e.prevetnDefault()
+      e.preventDefault()
       this.setState({status:e.target.value})
     }
     return(
