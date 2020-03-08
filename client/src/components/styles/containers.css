@@ -115,11 +115,11 @@
   }
 
 textarea:focus, input:focus {
-    color: #ffffff;
+    color: #C4C4C4;
 }
 
 input, select, textarea{
-  color: #ffffff;
+  color: #C4C4C4;
 }
 
 input[type="button"] {
