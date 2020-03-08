@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SendMessageContainer from './components/containers/sendMessageContatiner'
+import SendMessageContainer from './components/containers/sendMessageContainer'
 import DisplayMessageContainer from './components/containers/displayMessageContainer'
 
 import Username from './components/username'

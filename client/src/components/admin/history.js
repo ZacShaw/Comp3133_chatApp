@@ -189,7 +189,7 @@ const styles = theme => ({
     overflowX: 'auto',
   },
 });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Table Properties & Scripts
 class History extends React.Component{
   state = {
     order: 'asc',
@@ -254,8 +254,6 @@ class History extends React.Component{
   };
 
   handleDelete= (eid) => {
-    // Array.prototype.filter returns new array
-    // so we aren't mutating state here
     const arrayCopy = this.state.data.filter((row) => {
       return row._id !== eid
     });

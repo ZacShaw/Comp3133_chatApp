@@ -266,8 +266,6 @@ class Room extends React.Component{
   };
 
   handleUpdate= (eid, stat) => {
-    // Array.prototype.filter returns new array
-    // so we aren't mutating state here
     if(eid!=='5cb60f39425e3b7e58103e86'){
       axios.post('http://localhost:5000/api/room/update/'+eid, {
         status:stat
@@ -280,8 +278,6 @@ class Room extends React.Component{
   };
 
   handleDelete= (eid) => {
-    // Array.prototype.filter returns new array
-    // so we aren't mutating state here
     const arrayCopy = this.state.data.filter((row) => {
       return row._id !== eid
     });
@@ -316,12 +312,6 @@ class Room extends React.Component{
     const { classes } = this.props;
     const { data, order, orderBy, id, selected, rowsPerPage, page, status } = this.state;
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
-   /* let rows= []
-    data.map(item=>{
-      this.date=item['created'].substring(0,10)
-      this.time=item['edited'].substring(11,16)
-      return rows.push(createData(item['room'],this.date, this.time, item['status']))
-    })*/
     this.selectStatus=(e)=>{
       e.preventDefault()
       this.setState({status:e.target.value})

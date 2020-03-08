@@ -17,7 +17,7 @@ class Username extends React.Component {
                                     <FormGroup controlId="username">
                                         <FormControl className='input-line full-width'  placeholder='Username' autoFocus value={this.props.user} onChange={this.props.change}/>
                                     </FormGroup>
-                                    <Button className='ghost-round full-width' type="submit">Login</Button>
+                                    <Button className='ghost-round1' type="submit">Login</Button>
                                     <p>{this.error}</p>
                                 </form>
                             </div>

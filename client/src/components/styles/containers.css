@@ -264,6 +264,7 @@ input[type="button"] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   width: 15em;
+  background:blue;
 }
 .btn:after {
   content: '';

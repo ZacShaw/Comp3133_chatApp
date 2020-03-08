@@ -58,7 +58,7 @@ class Adminlogin  extends Component {
                                             <FormGroup controlId="password">
                                                 <FormControl  className='input-line full-width' placeholder='Password' value={this.state.password} onChange={this.handleChange} type="password"/>
                                             </FormGroup>
-                                            <Button className='ghost-round full-width' block disabled={!this.validateForm()} type="submit">Login</Button>
+                                            <Button className='ghost-round1' block disabled={!this.validateForm()} type="submit">Login</Button>
                                         </form>
                                     </div>
                                 </div>
@@ -78,6 +78,4 @@ class Adminlogin  extends Component {
  
 export default Adminlogin ;
 
-/*
-
-*/
+//Clean this page look up later

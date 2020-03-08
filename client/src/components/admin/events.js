@@ -192,7 +192,7 @@ const styles = theme => ({
     overflowX: 'auto',
   },
 });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Table Properties & Scripts
 class Events extends React.Component{
     
   state = {
@@ -259,8 +259,6 @@ class Events extends React.Component{
   };
 
   handleDelete= (eid) => {
-    // Array.prototype.filter returns new array
-    // so we aren't mutating state here
     const arrayCopy = this.state.data.filter((row) => {
       return row._id !== eid
     });
