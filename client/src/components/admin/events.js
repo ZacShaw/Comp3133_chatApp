@@ -45,13 +45,13 @@ const getSorting=(order, orderBy)=>{
 }
 
 const rows = [
-  { id: 'id', numeric: true, disablePadding: false, label: 'Row ID' },
+  { id: 'id', numeric: false, disablePadding: true, label: 'ID' },
   { id: 'eid', numeric: true, disablePadding: false, label: 'Event ID' },
-  { id: 'sockid', numeric: true, disablePadding: false, label: 'Socket ID' },
+  { id: 'socket', numeric: true, disablePadding: false, label: 'Socket ID' },
   { id: 'type', numeric: true, disablePadding: false, label: 'Type' },
   { id: 'name', numeric: true, disablePadding: false, label: 'User' },
-  { id: 'date', numeric: true, disablePadding: false, label: 'Date' },
-  { id: 'time', numeric: true, disablePadding: false, label: 'Time' },
+  { id: 'connect', numeric: true, disablePadding: false, label: 'Date' },
+  { id: 'disconnect', numeric: true, disablePadding: false, label: 'Time' },
 ];
 
 class EventsHeader extends React.Component {

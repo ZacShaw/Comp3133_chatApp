@@ -179,7 +179,6 @@ button:focus {
   }
 
 .overlay {
-  background:rgba(150, 150, 150, 0.80);
   opacity: 0.85;
   filter: alpha(opacity=85);
   height: 500px;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SendMessageContainer from './components/containers/sendMessageContatiner'
 import DisplayMessageContainer from './components/containers/displayMessageContainer'
-import OnlineUsersContainer from './components/containers/onlineUsersConatiner'
+
 import Username from './components/username'
 import RoomSelectionContainer from './components/containers/roomSelectionContainer'
 import Adminlogin from './components/admin/Adminlogin'

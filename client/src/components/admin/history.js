@@ -46,11 +46,10 @@ const getSorting=(order, orderBy)=>{
 
 const rows = [
   { id: 'id', numeric: false, disablePadding: true, label: 'ID' },
-  { id: 'name', numeric: true, disablePadding: false, label: 'User' },
-  { id: 'message', numeric: true, disablePadding: false, label: 'Message' },
+  { id: 'nick', numeric: true, disablePadding: false, label: 'User' },
+  { id: 'msg', numeric: true, disablePadding: false, label: 'Message' },
   { id: 'room', numeric: true, disablePadding: false, label: 'Room' },
-  { id: 'date', numeric: true, disablePadding: false, label: 'Date' },
-  { id: 'time', numeric: true, disablePadding: false, label: 'Time' },
+  { id: 'created', numeric: true, disablePadding: false, label: 'Date' },
 ];
 
 class HistoryHeader extends React.Component {
