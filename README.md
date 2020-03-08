@@ -9,5 +9,5 @@ node app.js in initial directory
 
 # Admin login credentials:
 
-Username: admin
-Password: password
+Username: test
+Password: test
