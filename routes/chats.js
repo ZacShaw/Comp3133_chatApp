@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Chats = require('../models/Chats.js');
 
-/* GET ALL MESSAGES */
+/* Get Message History */
 router.get('/api/history', function(req, res, next) {
   Chats.find((err, results)=>{
     if(err) throw err;
@@ -11,7 +11,7 @@ router.get('/api/history', function(req, res, next) {
   });
 }); 
 
-/* SAVE MESSAGES */
+/* Save Message History */
 router.post('/api/history', function(req, res, next) {
   Chats.create(req.body, function (err, chat) {
     if (err) return next(err);

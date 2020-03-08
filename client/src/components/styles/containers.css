@@ -26,13 +26,17 @@
     width: 100vw;
   }
   
+  h1{
+    color: white;
+  }
+
   .container h1 {
     margin: 0.5em auto;
     text-align: center;
   }
   
   .chatbox {
-    background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 49%, #2cb5e8 65%);
+    background: rgb(70, 70, 70);
     width: 100%;
     height: 85%;
     border-radius: 0.2em;
@@ -97,31 +101,51 @@
   }*/
 
   .chatbox__messages__user-message--ind-message {
-    background: rgba(255, 0, 0, 0.507);
+    background: rgba(9, 151, 227, .75);
     padding: 10% 30% 35% 30%;
     height: auto;
     width: 875%;
-    border-radius: 5px;
-    margin: 15% 0% 35% 55%;
+    border-radius: 25px;
+    margin: 10% 0% 25% 55%;
     box-shadow: 1px 1px 12px rgb(0, 0, 0);
     display: inline-block;
     border: solid 1px black;
     min-width: 50px;
     max-width: 875%;
   }
+
+textarea:focus, input:focus {
+    color: #ffffff;
+}
+
+input, select, textarea{
+  color: #ffffff;
+}
+
+input[type="button"] {
+  background-color: darkslategray;
+  color: white;
+  margin-left: 25px;
+}
   
   .name {
     font-size: 90%;
     font-weight: 900;
+    color: whitesmoke;
+  }
+
+  .msgtext {
+    color:whitesmoke;
   }
 
   .messageContainer{
-    background: rgba(255, 255, 255, 0.1);
-    margin-right: 25%;
+    background: rgba(0, 0, 0, 0.5);
+    margin-right: 3%;
+    margin-left: 28%;
     border-top-right-radius: 0.2em;
     border-bottom-right-radius: 0.2em;
     overflow: auto;
-    height: 700px;
+    height: 650px;
   }
   
   .message {
@@ -197,42 +221,40 @@
   }
   
   .chatbox form input {
-    background: rgba(36, 34, 34, 0.6);
+    background: rgba(9, 151, 227, 0.6);
     position: absolute;
     bottom: 0;
     left: 0;
     border: none;
-    width: 48%;
+    width: 65%;
     padding: 1.2em;
     outline: none;
     font-weight: 300;
-    margin-left: 26%;
-    margin-right: 27%;
-    margin-bottom: 1%;
+    margin-left: 30%;
+    margin-right: 50%;
+    margin-bottom: 2%;
     box-shadow: 1px 1px 12px rgb(0, 0, 0);
-  }
+}
 
   .btn-2g {
     border-radius: 40px;
 }
 .btn-2 {
-  background: #cb4e4e;
+  background:rgb(9, 151, 227, .75);
   color: #fff;
-  box-shadow: 0 6px #ab3c3c;
+  box-shadow: 0 6px rgb(10, 65, 173);
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
 }
 .btn {
-  border: none;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  background: none;
   cursor: pointer;
-  padding: 2% 23%;
-  display: inline-block;
-  margin: 0% 29% 5% 20%;
+  padding: 2% 2%;
+  display: block;
+  margin: 5% 0% 5% 17.5%;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
@@ -241,6 +263,7 @@
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+  width: 15em;
 }
 .btn:after {
   content: '';

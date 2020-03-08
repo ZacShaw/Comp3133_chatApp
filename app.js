@@ -9,23 +9,19 @@ var express = require('express'),
     require('./socketManager/socket')(io);
 
 
-//////////PORT CONNECTION//////////
+//Port Function
 server.listen(port, function(){
     console.log('Listening on port ' + port);
 });
 
-//////////DATABASE CONNECTION//////////
-mongoose.connect('mongodb://admin:password123@ds349455.mlab.com:49455/testt',{ useNewUrlParser: true }, (err)=> {
+//Connecting to Database cluster
+mongoose.connect('mongodb+srv://admin:Charl3magn3@cluster0-dqyal.mongodb.net/Mern',{ useNewUrlParser: true }, (err)=> {
     if (err){
         console.log(err);
     }else {
-        console.log('Connected to Database')
+        console.log('Successfully Connected to Database')
     }
 })
-
-mongoose.Promise = global.Promise;
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -33,6 +29,11 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.use('/chats', require('./routes/chats'));
+mongoose.Promise = global.Promise;
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/rooms'));
+app.use('/chats', require('./routes/chats'));

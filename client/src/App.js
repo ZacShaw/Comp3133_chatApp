@@ -26,7 +26,7 @@ class App extends Component {
     }
     this.socket =  io('localhost:5000');
   }
-  ///////////Choosing a username///////////
+ //Username creation
   submitUsername = e =>{
     e.preventDefault()
     this.socket.emit('NEW_USER', this.state.username, ()=>{
@@ -40,7 +40,7 @@ class App extends Component {
     });
   }
 
-///////////Realtime Sockets///////////
+//Sockets
 componentDidMount(){
   this.socket.on('USER_ADDED', data=>{
     this.setState({users:data}) 
@@ -56,7 +56,7 @@ componentDidMount(){
     this.addMessage(data)
   })
 }
-/////Display Message/////
+//Message Display
 addMessage = data => {
   this.setState({messages: [...this.state.messages, data]});
 }
@@ -72,7 +72,7 @@ sendMessage = ev => {
   this.socket.emit('SEND_MESSAGE', {
       author: this.props.user,
       message: this.state.message,
-      room: this.state.room
+      room: this.state.room,
   });
   this.setState({message: ''});
 
@@ -84,14 +84,14 @@ showUser=()=>{
   this.setState({admin:false});
 }
   render() {
-///////////Populating Rooms///////////
+//Add in rooms from database
 const {rooms, user, room, admin} = this.state
 
 let roomName=[]
 rooms.forEach(room=>{
     return roomName.push(room)
 })
-///////////Changing Rooms///////////
+//prevent joining on current room
 this.handleRoomChange = e =>{
   if(room===e.target.value){
     alert('You are already in this room')
@@ -113,12 +113,12 @@ this.handleRoomChange = e =>{
         !admin?
         
         <div>
-          <button className='ghost-round2 full-width' onClick={this.showAdmin}>Admin Login</button>
+          <button className='ghost-round1' onClick={this.showAdmin}>Admin Login</button>
           <Username change={this.handleChange} submit={this.submitUsername} user={this.state.username}/>
         </div>
         :
         <div>
-          <button className='ghost-round2 full-width' onClick={this.showUser}>Chat Login</button>
+          <button className='ghost-round1' onClick={this.showUser}>Chat Login</button>
           <Adminlogin/>
         </div>
       }
@@ -127,7 +127,6 @@ this.handleRoomChange = e =>{
     <div className='container'>
     <div className='chatbox' id='contentWrap'>
     <h1 align="center">{room} Chatroom</h1>
-      <OnlineUsersContainer online={this.state.users}/>
       <RoomSelectionContainer rooms={roomName} value={this.state.room} onChangeValue={this.handleRoomChange}/>
       <DisplayMessageContainer messages={this.state.messages}/>
       <SendMessageContainer message={this.state.message} change={ev=>this.setState({message: ev.target.value})} send={this.onEnter}/>    

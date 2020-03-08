@@ -10,9 +10,9 @@ class DisplayMessageContainer extends React.Component {
                             <div className="chatbox__messages" key={i}>
                                 <div className="chatbox__messages__user-message">
                                     <div className=" message chatbox__messages__user-message--ind-message">
-                                        <p className='name'>{message.author}</p>
+                                        <p className='name'>{message.author}</p><p className='created'>{message.created}</p>
                                         <br/>
-                                        <p className="">{message.message}</p>
+                                        <p className="msgtext">{message.message}</p>
                                     </div>
                                 </div>
                             </div>

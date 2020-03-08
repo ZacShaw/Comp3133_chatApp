@@ -191,12 +191,8 @@ const styles = theme => ({
     overflowX: 'auto',
   },
 });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*let id=0
-  function createData(room, created, edited, status){
-    id+=1
-    return {id: id,room, created, edited, status};
-  }*/
+
+
 class Room extends React.Component{
   
   constructor(props) {
@@ -335,7 +331,7 @@ class Room extends React.Component{
         <EnhancedTableToolbar numSelected={selected.length} delId={()=>this.handleDelete(id)}/>
         <div className={classes.tableWrapper}>
 
-        <input type="button" value="Add Room" onClick={this.openModal}/>
+        <input type="button" color="black" value="Add Room" onClick={this.openModal}/>
             <Modal visible={this.state.visible} width="400" height="300" effect="fadeInUp" onClickAway={()=>this.closeModal}>
             <div>
                 <form method="POST" action="/api/room">
