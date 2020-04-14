@@ -114,6 +114,30 @@
     max-width: 875%;
   }
 
+#modalbox{
+  margin-left: 20%;
+  padding-top: 5%;
+}
+
+#innerdiv{
+  padding-top: 50px;
+}
+
+#innerdiv2{
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+#txtarea {
+  color:black;
+  border: 10px;
+  background-color: lightgray;
+}
+
+#sel1{
+  color:black;
+}
+
 textarea:focus, input:focus {
     color: #C4C4C4;
 }
@@ -123,8 +147,8 @@ input, select, textarea{
 }
 
 input[type="button"] {
-  background-color: darkslategray;
-  color: white;
+    background-color: lightgray;
+    color: black;
   margin-left: 25px;
 }
   

@@ -125,7 +125,7 @@ this.handleRoomChange = e =>{
     </div>
     :
     <div className='container'>
-    <div className='chatbox' id='contentWrap'>
+    <div className='chatbox' id='contentWrap'>   
     <h1 align="center">{room} Chatroom</h1>
       <RoomSelectionContainer rooms={roomName} value={this.state.room} onChangeValue={this.handleRoomChange}/>
       <DisplayMessageContainer messages={this.state.messages}/>

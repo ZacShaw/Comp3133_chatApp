@@ -267,7 +267,7 @@ class Room extends React.Component{
 
   handleUpdate= (eid, stat) => {
     if(eid!=='5cb60f39425e3b7e58103e86'){
-      axios.post('http://localhost:5000/api/room/update/'+eid, {
+      axios.patch('http://localhost:5000/api/room/update/'+eid, {
         status:stat
       })
       this.setState({selected: []})
@@ -321,18 +321,19 @@ class Room extends React.Component{
         <EnhancedTableToolbar numSelected={selected.length} delId={()=>this.handleDelete(id)}/>
         <div className={classes.tableWrapper}>
 
-        <input type="button" color="black" value="Add Room" onClick={this.openModal}/>
+        <input type="button" value="Add Room" onClick={this.openModal}/>
             <Modal visible={this.state.visible} width="400" height="300" effect="fadeInUp" onClickAway={()=>this.closeModal}>
-            <div>
+            <div id="modalbox">
                 <form method="POST" action="/api/room">
-                  <label>Room name: </label>
-                  <input type='text' placeholder="Room name" name="room" required/>  <br></br>
-                  <label>Status: &emsp;&emsp;&nbsp;&nbsp; </label>
+                <h3>Add a Room</h3>  
+                  <div id="innerdiv"><label>Room name: </label>
+                  <input type='text' name="room" id="txtarea" required/></div>  <br></br>
+                  <div id="innerdiv2"><label>Status: </label>
                   <select id="sel1" name="status" required>
                   <option>Active</option>
                   <option>Inactive</option>
                   </select>
-                  <input type="submit" value="submit"/>       
+                  <input type="submit" id="txtarea" value="submit"/></div>       
                 </form>
                 <button onClick={this.closeModal}>Close</button>
             </div>
@@ -376,9 +377,9 @@ class Room extends React.Component{
                       <TableCell>
                         <Popup trigger={<button>Edit</button>}>
                           <div>
-                            <form >
+                            <form method="PATCH" action="/api/room">
                               <label>Room name: </label>
-                              <input type='text' placeholder={n.room} name="room" />  
+                              <input type='text' id="txtarea" name="room" />  
                               <br></br>
                               <label>Status: &emsp;&emsp;&nbsp;&nbsp; </label>
                               <select onChange={this.selectStatus}id="sel1" name="status" required>
